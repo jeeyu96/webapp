@@ -39,10 +39,10 @@ const ListingReservation: React.FC<
       <div className="
       flex flex-row items-center gap-1 p-4">
         <div className="text-2xl font-semibold">
-          $ {price}
+          serialnumber {price}
         </div>
         <div className="font-light text-neutral-600">
-          night
+          status
         </div>
       </div>
       <hr />
@@ -56,7 +56,7 @@ const ListingReservation: React.FC<
       <div className="p-4">
         <Button 
           disabled={disabled} 
-          label="Reserve" 
+          label="Give Feedback" 
           onClick={onSubmit}
         />
       </div>
@@ -73,10 +73,10 @@ const ListingReservation: React.FC<
         "
       >
         <div>
-          Total
+          Feedback on:
         </div>
         <div>
-          $ {totalPrice}
+          device {totalPrice}
         </div>
       </div>
     </div>

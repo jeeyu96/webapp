@@ -73,7 +73,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
                         {roomCount} Spart Parts
                     </div>
                     <div>
-                        {bathroomCount} bathrooms
+                        {bathroomCount} Errorlogs
                     </div>
                 </div>
             </div>
@@ -89,7 +89,9 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
             )}
             <hr />
             <div className="text-lg font-light text-neutral-500">
-                {description}
+                {description} 
+                <br />
+                hello
             </div>
             <hr />
             <Map center={coordinates}/>
