@@ -1,4 +1,4 @@
-# Use a more recent Node.js image as the base image
+# Use a more recent Node.js image as the base imag
 FROM node:18-alpine
 
 # Set the working directory inside the container
