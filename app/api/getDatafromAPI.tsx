@@ -6,7 +6,7 @@ export default async function getDatafromAPI() {
     if (!res.ok) throw new Error ('failed to fetch data')
 
     return res.json()
-
+    
     console.log(res)
 }
 

@@ -59,7 +59,7 @@ const PredictionModal = () => {
     let bodyContent = (
         <div className="flex flex-col gap-8">
             <Heading
-                title="Which predictions are you looking for?"
+                title="What predictions are you looking for?"
                 subtitle="Pick your clinic to look at."
             >
             </Heading>

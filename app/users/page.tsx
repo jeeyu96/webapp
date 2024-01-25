@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     title: 'Users',
 }
 
-console.log('Hello')
+// console.log('Hello')
 
 export default async function UsersPage() {
     // will request this during the build -> this is a static website
