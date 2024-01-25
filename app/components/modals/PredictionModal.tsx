@@ -8,6 +8,8 @@ import Modal from "./Modal";
 import Heading from "../Heading";
 import { categories } from "../navbar/Categories";
 
+import Link from "next/link"
+
 
 // create steps
 enum STEPS {
@@ -76,6 +78,10 @@ const PredictionModal = () => {
                         {item.label}
                     </div>
                 ))}
+            </div>
+
+            <div>
+                <Link href="/users"> Users </Link>
             </div>
             
         </div>
