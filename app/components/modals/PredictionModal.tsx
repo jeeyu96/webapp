@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import usePredictionModal from "@/app/hooks/usePredictionModal";
 
@@ -11,6 +11,8 @@ import Modal from "./Modal";
 enum STEPS {
     PREDICTIONS = 0,
     ERRORLOG = 1,
+    FEEDBACK = 2,
+
 }
 
 const PredictionModal = () => {
@@ -29,7 +31,25 @@ const PredictionModal = () => {
         setStep((value) => value + 1);
     }
 
-    
+
+    // actionLabel 1 "NEXT"
+    const actionLabel = useMemo(() => {
+        if (step == STEPS.FEEDBACK) {
+            return 'Submit Feedback'
+        }
+
+        return 'Next';
+    }, [step]);
+
+    // actionLabel 2 "BACK"
+    const secondaryActionLabel = useMemo(() => {
+        if (step == STEPS.PREDICTIONS) {
+            return undefined;
+        }
+
+        return 'Back'
+    }, [step])
+
 
     return ( 
         <Modal 
