@@ -5,6 +5,8 @@ import { useMemo, useState } from "react";
 import usePredictionModal from "@/app/hooks/usePredictionModal";
 
 import Modal from "./Modal";
+import Heading from "../Heading";
+import { categories } from "../navbar/Categories";
 
 
 // create steps
@@ -51,13 +53,44 @@ const PredictionModal = () => {
     }, [step])
 
 
+
+    let bodyContent = (
+        <div className="flex flex-col gap-8">
+            <Heading
+                title="Which predictions are you looking for?"
+                subtitle="Pick your clinic to look at."
+            >
+            </Heading>
+            <div
+                className="
+                grid
+                grid-cols-1
+                md:grid-cols-2
+                gap-3
+                max-h-[50vh]
+                overflow-y-auto
+                "
+            >
+                {categories.map((item) => (
+                    <div key={item.label} className="col-span-1">
+                        {item.label}
+                    </div>
+                ))}
+            </div>
+            
+        </div>
+    )
+
     return ( 
         <Modal 
             isOpen={predictionModal.isOpen}
             onClose={predictionModal.onClose}
             onSubmit={predictionModal.onClose}
-            actionLabel="Submit"
+            actionLabel={actionLabel}
+            secondaryActionLabel= {secondaryActionLabel}
+            secondaryAction= {step == STEPS.PREDICTIONS ? undefined : onBack}
             title="Global Predictions"
+            body={bodyContent}
         />
      );
 }
