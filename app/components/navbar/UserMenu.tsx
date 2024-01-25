@@ -58,7 +58,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                         cursor-pointer
                     "
                 >
-                    CPM Assistant
+                    New Entry here!
                 </div>
                 <div
                     onClick={toggleOpen}
