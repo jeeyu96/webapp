@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import getAllUsers from "@/app/api/getDatafromAPI"
+import getAllUsers from "@/app/libs/getDatafromAPI"
 import Link from "next/link"
 
 export const metadata: Metadata = {
