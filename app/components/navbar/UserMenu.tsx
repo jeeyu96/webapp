@@ -5,6 +5,7 @@ import Avatar from '../Avatar';
 import { useCallback, useState } from 'react';
 import MenuItem from './MenItem';
 
+import usePredictionModal from '@/app/hooks/usePredictionModal';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import useLoginModal from '@/app/hooks/useLoginModal';
 import useRentModal from '@/app/hooks/useRentModal';
@@ -24,6 +25,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
     const registerModal = useRegisterModal();
     const loginModal = useLoginModal();
     const rentModal = useRentModal();
+    const predictionModal = usePredictionModal();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = useCallback(() => {
@@ -39,6 +41,18 @@ const UserMenu: React.FC<UserMenuProps> = ({
 
         rentModal.onOpen();
     }, [currentUser, loginModal, rentModal]);
+
+
+    // create onPrediction function
+    const onPrediction = useCallback(() => {
+        if (!currentUser) {
+            return loginModal.onOpen();
+        }
+
+        // Open Prediction Modal
+        predictionModal.onOpen()
+    }, [currentUser, loginModal, predictionModal]);
+
 
     return ( 
         <div className="relative">
@@ -110,6 +124,10 @@ const UserMenu: React.FC<UserMenuProps> = ({
                             <MenuItem 
                                 onClick={() => {}}
                                 label="My devices"
+                            />
+                            <MenuItem
+                                onClick={predictionModal.onOpen}
+                                label="Predictions"
                             />
                             <MenuItem 
                                 onClick={() => {}}

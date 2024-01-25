@@ -5,6 +5,7 @@ import './globals.css'
 import Navbar from "./components/navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
 
+import PredictionModal from "./components/modals/PredictionModal";
 import RentModal from "./components/modals/RentModal";
 import RegisterModal from "./components/modals/RegisterModal";
 import LoginModal from "./components/modals/LoginModal";
@@ -36,6 +37,7 @@ export default async function RootLayout({
       <body className={font.className}>
           {/*<ClientOnly>*/}
           <ToasterProvider/>
+          <PredictionModal/>
           <RentModal />
           <LoginModal />
           <RegisterModal />
