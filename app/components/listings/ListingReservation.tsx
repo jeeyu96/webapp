@@ -56,7 +56,7 @@ const ListingReservation: React.FC<
       <div className="p-4">
         <Button 
           disabled={disabled} 
-          label="Give Feedback" 
+          label="Schedule Maintenance" 
           onClick={onSubmit}
         />
       </div>
